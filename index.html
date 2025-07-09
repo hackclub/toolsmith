@@ -89,7 +89,8 @@
           </div>
           <p>Toolsmith</p>
         </div>
-        <div
+        <a
+          href="/gallary.html"
           class="hover:bg-gray-200 flex items-center mx-2 rounded-lg px-4 py-3 space-x-3 my-1"
         >
           <svg
@@ -107,11 +108,12 @@
             />
           </svg>
           <p>Gallary</p>
-        </div>
+        </a>
         <p class="mx-6 text-gray-600 mt-4 mb-1">Chats</p>
         <div>
-          <div
-            class="hover:bg-gray-200 flex items-center mx-2 rounded-lg px-4 py-3 space-x-3"
+          <a
+            href="/"
+            class="bg-gray-200 flex items-center mx-2 rounded-lg px-4 py-3 space-x-3"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -129,8 +131,9 @@
             </svg>
 
             <p>What is this?</p>
-          </div>
-          <div
+          </a>
+          <a
+            href="/guide.html"
             class="hover:bg-gray-200 flex items-center mx-2 rounded-lg px-4 py-3 space-x-3"
           >
             <svg
@@ -149,7 +152,7 @@
             </svg>
 
             <p>MCP Guide</p>
-          </div>
+          </a>
           <div
             class="hover:bg-gray-200 flex items-center mx-2 rounded-lg px-4 py-3 space-x-3"
           >
@@ -184,7 +187,7 @@
         <div
           class="border-b border-gray-300 h-16 items-center px-6 text-xl z-10 bg-white flex-shrink-0 hidden lg:flex"
         >
-          <p class="grow">Toolsmith</p>
+          <p class="grow">What is this?</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
@@ -196,9 +199,10 @@
             />
           </svg>
         </div>
-        <div class="flex-1 overflow-y-auto pb-24">
+        <div class="flex-1 overflow-y-auto pb-32">
           <div
-            class="w-full max-w-5xl mx-auto px-4 lg:px-10 mt-12 flex flex-col text-lg"
+            id="chat-container"
+            class="w-full max-w-5xl mx-auto px-4 lg:px-10 mt-12 flex flex-col text-lg pb-8"
           >
             <div class="ml-auto py-2 px-4 bg-gray-100 rounded-2xl">
               <p>What's this about?</p>
@@ -206,7 +210,7 @@
             <div class="space-y-1 py-6 mr-0 lg:mr-[25%]">
               <p class="font-semibold">Welcome to Toolsmith! 🧰</p>
               <p>
-                Toolsmith is a limited
+                Toolsmith is a limited-time
                 <a class="underline" href="https://ysws.hackclub.com"
                   >You Ship, We Ship</a
                 >
@@ -239,7 +243,7 @@
                   </p>
                   <p class="text-sm">
                     - Publish it to
-                    <a href="/gallary" class="underline text-blue-600"
+                    <a href="/gallary.html" class="underline text-blue-600"
                       >the gallary</a
                     >.
                   </p>
@@ -367,31 +371,37 @@
           </div>
         </div>
         <div
-          class="absolute left-6 bottom-6 right-6 bg-white rounded-full border border-gray-300 flex h-14 items-center text-lg"
+          class="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-full max-w-5xl px-6"
         >
-          <input
-            type="text"
-            placeholder="Ask anything"
-            value=""
-            class="placeholder-gray-400 grow mx-8"
-          />
-          <button
-            type="button"
-            class="bg-black rounded-full size-10 mx-2 text-white flex items-center justify-center"
+          <div
+            class="bg-white rounded-full border border-gray-300 flex h-14 items-center text-lg"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-              class="size-4"
+            <input
+              id="chat-input"
+              type="text"
+              placeholder="Ask anything"
+              value=""
+              class="placeholder-gray-400 grow mx-8 outline-0"
+            />
+            <button
+              type="button"
+              onclick="sendMessage()"
+              class="bg-black rounded-full size-10 mx-2 text-white flex items-center justify-center"
             >
-              <path
-                fill-rule="evenodd"
-                d="M8 14a.75.75 0 0 1-.75-.75V4.56L4.03 7.78a.75.75 0 0 1-1.06-1.06l4.5-4.5a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06L8.75 4.56v8.69A.75.75 0 0 1 8 14Z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                class="size-4"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 14a.75.75 0 0 1-.75-.75V4.56L4.03 7.78a.75.75 0 0 1-1.06-1.06l4.5-4.5a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06L8.75 4.56v8.69A.75.75 0 0 1 8 14Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -417,6 +427,189 @@
           sidebar.classList.add("-translate-x-full");
         }
       });
+
+      // Chat functionality
+      let chatHistory = [
+        {
+          role: "user",
+          content: "What's this about?",
+        },
+        {
+          role: "assistant",
+          content:
+            "Welcome to Toolsmith! 🧰\n\nToolsmith is a limited You Ship, We Ship program where you build an awesome MCP tool and get $10 in AI credits for platforms like OpenAI, Anthropic, and more!",
+        },
+        {
+          role: "user",
+          content: "So how does this work?",
+        },
+        {
+          role: "assistant",
+          content:
+            "Great question! It's actually really simple:\n\n🚀 You Ship:\n- MCP server with at least one tool\n- Spend at least 2 hrs\n- Publish it to the gallery\n\n🎁 We Ship:\n- $10 of AI Credits for OpenAI, Anthropic, Gemini, etc.",
+        },
+        {
+          role: "user",
+          content: "Sounds cool! So, what are MCP tools?",
+        },
+        {
+          role: "assistant",
+          content:
+            "MCP (Model Context Protocol) tools are like superpowers for AI assistants! 🦸‍♂️\n\nThink of them as plugins that give AI new abilities. Instead of just chatting, AI can now:\n- Check the weather anywhere (Weather tool)\n- Organize & search files on your computer (File manager)\n- Send messages as you (Slack integration)\n\nAnd much more!",
+        },
+        {
+          role: "user",
+          content: "This is so cool! How do I get started?",
+        },
+        {
+          role: "assistant",
+          content:
+            "Perfect! Here's the simple 3-step process:\n\n1. 🛠️ Build: Follow our step-by-step guide to create your MCP tool\n2. 📤 Submit: Share your creation with the community\n3. 💰 Earn: Get $10 in AI credits for your hard work!",
+        },
+      ];
+
+      async function sendMessage() {
+        const input = document.getElementById("chat-input");
+        const message = input.value.trim();
+
+        if (!message) return;
+
+        // Clear input
+        input.value = "";
+
+        // Add user message to chat
+        addMessageToChat(message, "user");
+
+        // Show typing indicator
+        showTypingIndicator();
+
+        try {
+          // Send to AI API
+          const response = await fetch(
+            "https://ai.hackclub.com/chat/completions",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                model: "gpt-4o-mini",
+                messages: [
+                  {
+                    role: "system",
+                    content:
+                      "You are a helpful assistant for Toolsmith, a program where developers build MCP (Model Context Protocol) tools and earn $10 in AI credits. Help users understand MCP tools, guide them through the building process, and answer any questions about the program. Be friendly, encouraging, and technical when needed. Be polite and playful. Your responses should be in plain text without formatting. Emojis are okay.",
+                  },
+                  ...chatHistory,
+                  {
+                    role: "user",
+                    content: message,
+                  },
+                ],
+                max_tokens: 500,
+                temperature: 0.7,
+              }),
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+          const aiMessage = data.choices[0].message.content;
+
+          // Remove typing indicator
+          hideTypingIndicator();
+
+          // Add AI response to chat
+          addMessageToChat(aiMessage, "assistant");
+
+          // Update chat history
+          chatHistory.push(
+            { role: "user", content: message },
+            { role: "assistant", content: aiMessage }
+          );
+
+          // Keep only last 10 messages to manage context length
+          if (chatHistory.length > 20) {
+            chatHistory = chatHistory.slice(-20);
+          }
+        } catch (error) {
+          console.error("Error sending message:", error);
+          hideTypingIndicator();
+          addMessageToChat(
+            "Sorry, I encountered an error. Please try again.",
+            "assistant"
+          );
+        }
+      }
+
+      function addMessageToChat(message, role) {
+        const chatContainer = document.getElementById("chat-container");
+        const messageDiv = document.createElement("div");
+
+        if (role === "user") {
+          messageDiv.className =
+            "ml-auto py-2 px-4 bg-gray-100 rounded-2xl max-w-md mb-4";
+          messageDiv.innerHTML = `<p>${escapeHtml(message)}</p>`;
+        } else {
+          messageDiv.className = "space-y-1 py-6 mr-0 lg:mr-[25%] mb-4";
+          messageDiv.innerHTML = `<p>${escapeHtml(message)}</p>`;
+        }
+
+        chatContainer.appendChild(messageDiv);
+
+        // Scroll to bottom with delay to ensure DOM is updated
+        setTimeout(() => {
+          const scrollContainer = chatContainer.parentElement;
+          scrollContainer.scrollTop = scrollContainer.scrollHeight;
+        }, 10);
+      }
+
+      function showTypingIndicator() {
+        const chatContainer = document.getElementById("chat-container");
+        const typingDiv = document.createElement("div");
+        typingDiv.id = "typing-indicator";
+        typingDiv.className = "space-y-1 py-6 mr-0 lg:mr-[25%] mb-4";
+        typingDiv.innerHTML = `
+          <div class="flex items-center space-x-2">
+            <div class="flex space-x-1">
+              <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+              <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.1s;"></div>
+              <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s;"></div>
+            </div>
+            <span class="text-gray-500">Thinking...</span>
+          </div>
+        `;
+        chatContainer.appendChild(typingDiv);
+        setTimeout(() => {
+          const scrollContainer = chatContainer.parentElement;
+          scrollContainer.scrollTop = scrollContainer.scrollHeight;
+        }, 10);
+      }
+
+      function hideTypingIndicator() {
+        const typingIndicator = document.getElementById("typing-indicator");
+        if (typingIndicator) {
+          typingIndicator.remove();
+        }
+      }
+
+      function escapeHtml(text) {
+        const div = document.createElement("div");
+        div.textContent = text;
+        return div.innerHTML;
+      }
+
+      // Handle Enter key in input
+      document
+        .getElementById("chat-input")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            sendMessage();
+          }
+        });
     </script>
   </body>
 </html>
