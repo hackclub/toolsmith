@@ -271,7 +271,17 @@ npm install @modelcontextprotocol/sdk
               
               <p class="mb-4">Create a file called <code class="bg-gray-100 px-2 py-1 rounded">index.js</code>. We'll build this step-by-step.</p>
 
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">1. Import the libraries</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">1. Add the shebang</h3>
+              
+              <p class="mb-4">At the very top of your <code class="bg-gray-100 px-2 py-1 rounded">index.js</code> file, add this line:</p>
+              
+              <div class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 font-mono text-sm overflow-x-auto">
+<span class="text-gray-400">#!/usr/bin/env node</span>
+              </div>
+              
+              <p class="mb-6">This tells the system how to run your script and makes it executable on all platforms.</p>
+
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">2. Import the libraries</h3>
               
               <div class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 font-mono text-sm overflow-x-auto">
 <span class="text-blue-400">import</span> { McpServer } <span class="text-blue-400">from</span> <span class="text-green-400">"@modelcontextprotocol/sdk/server/mcp.js"</span>;<br>
@@ -279,7 +289,7 @@ npm install @modelcontextprotocol/sdk
 <span class="text-blue-400">import</span> { z } <span class="text-blue-400">from</span> <span class="text-green-400">"zod"</span>;
               </div>
 
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">2. Create the MCP server</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">3. Create the MCP server</h3>
               
               <div class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 font-mono text-sm overflow-x-auto">
 <span class="text-blue-400">const</span> server = <span class="text-blue-400">new</span> <span class="text-yellow-400">McpServer</span>({<br>
@@ -288,7 +298,7 @@ npm install @modelcontextprotocol/sdk
 });
               </div>
 
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">3. Define what input the tool expects</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">4. Define what input the tool expects</h3>
               
               <p class="mb-4">The input schema defines what the AI should input to your tool.</p>
               
@@ -304,7 +314,7 @@ npm install @modelcontextprotocol/sdk
                 <p class="text-blue-800"><strong>Side note:</strong> You can make fields optional in the schema by using <code class="bg-blue-100 px-2 py-1 rounded">.optional()</code> in Zod. For example: <code class="bg-blue-100 px-2 py-1 rounded">z.string().optional()</code> would make that input not required. This can be useful if your tool supports multiple input paths or you want to provide fallback behavior.</p>
               </div>
 
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">4. Write the function that does the work</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">5. Write the function that does the work</h3>
               
               <div class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 font-mono text-sm overflow-x-auto">
 <span class="text-blue-400">async function</span> <span class="text-yellow-400">getWeather</span>({ city }) {<br>
@@ -325,7 +335,7 @@ npm install @modelcontextprotocol/sdk
                 <p class="text-blue-800">If you need to add additional fields, just expand the parameters of the function. For example: <code class="bg-blue-100 px-2 py-1 rounded">getWeather({ city, isMetric })</code>.</p>
               </div>
 
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">5. Register the tool</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">6. Register the tool</h3>
               
               <p class="mb-4">Now connect the schema and the function together and register it to our server so it can be accessed.</p>
               
@@ -337,7 +347,7 @@ server.<span class="text-yellow-400">registerTool</span>(<span class="text-green
 }, getWeather);
               </div>
 
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">6. Start the MCP server</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">7. Start the MCP server</h3>
               
               <p class="mb-4">There are multiple transport methods for MCP servers (how your AI connects to the MCP server).</p>
               
@@ -364,7 +374,18 @@ npx @modelcontextprotocol/inspector node index.js
 
               <h2 class="text-3xl font-bold text-gray-900 mb-6">Testing It in Claude Desktop (or another AI Client)</h2>
               
-              <p class="mb-4">If you're using Claude Desktop:</p>
+              <p class="mb-4">First, we need to install our tool locally so we can test it:</p>
+              
+              <ol class="mb-6 space-y-3">
+                <li>In your terminal, navigate to your project directory and run:
+                  <div class="bg-gray-900 text-gray-100 p-4 rounded-lg mt-2 font-mono text-sm overflow-x-auto">
+npm link
+                  </div>
+                  <p class="text-gray-600 text-sm mt-2">This installes your code so the AI can access it</p>
+                </li>
+              </ol>
+              
+              <p class="mb-4">Now, if you're using Claude Desktop:</p>
               
               <ol class="mb-6 space-y-3">
                 <li>Open settings found in the top left (not by clicking your user name)</li>
@@ -375,9 +396,9 @@ npx @modelcontextprotocol/inspector node index.js
 {<br>
 &nbsp;&nbsp;<span class="text-green-400">"mcpServers"</span>: {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">"weather"</span>: {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">"command"</span>: <span class="text-yellow-400">"node"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">"command"</span>: <span class="text-yellow-400">"npx"</span>,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">"args"</span>: [<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow-400">"/path/to/mcp-weather-server/index.js"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow-400">"mcp-weather-server"</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
 &nbsp;&nbsp;}<br>
@@ -390,7 +411,7 @@ npx @modelcontextprotocol/inspector node index.js
                 <p class="text-blue-800">If you need environment variables (for API keys, configs, etc.), you can define them in the config <a href="https://modelcontextprotocol.io/docs/tools/debugging#environment-variables" class="text-blue-600 hover:text-blue-800 underline" target="_blank">like this</a></p>
               </div>
               
-              <ol start="5" class="mb-6 space-y-3">
+              <ol start="6" class="mb-6 space-y-3">
                 <li>Quit and re-open Claude Desktop</li>
                 <li>If you go back to the Developer tab, your MCP server should show up</li>
                 <li>Try it out! Ask Claude something like: "What's the weather in Berlin?"</li>
@@ -416,17 +437,11 @@ npx @modelcontextprotocol/inspector node index.js
               
               <p class="mb-6">This tells npm to treat <code class="bg-gray-100 px-2 py-1 rounded">index.js</code> as a command-line app called <code class="bg-gray-100 px-2 py-1 rounded">mcp-weather-server</code>.</p>
 
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">2. Add a shebang to the top of <code class="bg-gray-100 px-2 py-1 rounded">index.js</code></h3>
-              
-              <p class="mb-4">Right at the top of the file, above all the imports:</p>
-              
-              <div class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 font-mono text-sm overflow-x-auto">
-<span class="text-gray-400">#!/usr/bin/env node</span>
+              <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                <p class="text-blue-800"><strong>Note:</strong> We already added the shebang <code class="bg-blue-100 px-2 py-1 rounded">#!/usr/bin/env node</code> at the beginning of our file in step 1, so our script is ready to run on all systems!</p>
               </div>
-              
-              <p class="mb-6">This makes sure the script can run on all systems.</p>
 
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">3. Create a config file example</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">2. Create a config file example</h3>
               
               <p class="mb-4">Since we're publishing it, our config file will look a bit different.</p>
               
@@ -443,7 +458,7 @@ npx @modelcontextprotocol/inspector node index.js
 }
               </div>
 
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">4. Publish to npm</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">3. Publish to npm</h3>
               
               <p class="mb-4"><strong>This is just a tutorial — don't actually run the publish command unless you're shipping your own version.</strong> But if you were building your own app, you would run these to publish to npm.</p>
               
