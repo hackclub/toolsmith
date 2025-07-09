@@ -1,0 +1,16 @@
+{
+  "name": "toolsmith",
+  "version": "1.0.0",
+  "description": "You ship a MCP tool, we ship AI credits",
+  "license": "MIT",
+  "author": "",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./main.css -o ./tw.css",
+    "dev": "npx @tailwindcss/cli -i ./main.css -o ./tw.css --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  }
+}
