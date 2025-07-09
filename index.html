@@ -32,27 +32,8 @@
         </svg>
       </button>
 
-      <!-- Mobile Toolsmith icon -->
-      <div class="flex items-center space-x-2">
-        <div
-          class="size-9 bg-emerald-500 flex items-center justify-center rounded-full text-white"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            class="size-5"
-          >
-            <path
-              fill="currentColor"
-              d="M12 14c-2.42 0-4.7-.6-6-1.55V9.64c1.47.83 3.61 1.36 6 1.36s4.53-.53 6-1.36v2.44c.33-.05.66-.08 1-.08s.67.03 1 .08V7c0-2.21-3.58-4-8-4S4 4.79 4 7v10c0 2.21 3.59 4 8 4h.29a7.4 7.4 0 0 1-.29-2c-3.87 0-6-1.5-6-2v-2.23c1.61.78 3.72 1.23 6 1.23c.24 0 .47 0 .7-.03c.4-.83.95-1.56 1.62-2.16c-.74.12-1.52.19-2.32.19m0-9c3.87 0 6 1.5 6 2s-2.13 2-6 2s-6-1.5-6-2s2.13-2 6-2m10.7 14.6v-1l1.1-.8c.1-.1.2-.2.1-.3l-1-1.7c0-.1-.2-.1-.3-.1l-1.2.5c-.3-.2-.6-.4-.9-.5l-.2-1.3c0-.1-.1-.2-.2-.2h-2c-.2 0-.3.1-.3.2l-.2 1.3c-.3.2-.5.3-.8.5l-1.2-.5c-.1 0-.2 0-.3.1l-1 1.7c0 .1 0 .2.1.3l1.1.8v1l-1.1.8c-.1.1-.2.2-.1.3l1 1.7c.1.1.2.1.3.1l1.2-.5c.2.2.5.4.8.5l.2 1.3c.1.1.2.2.3.2h2c.1 0 .2-.1.2-.2l.2-1.3c.3-.2.5-.3.8-.5l1.2.4c.1 0 .2 0 .3-.1l1-1.7c.1-.1.1-.2 0-.2zm-3.7.9c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5s1.5.7 1.5 1.5s-.7 1.5-1.5 1.5"
-            />
-          </svg>
-        </div>
-        <p class="text-lg">Toolsmith</p>
-      </div>
-
-      <!-- Spacer to push icons right -->
-      <div class="grow"></div>
+      <!-- Page title -->
+      <p class="grow">What is this?</p>
 
       <button onclick="copyToClipboard()" class="hover:bg-gray-100 rounded p-1">
         <svg
@@ -112,7 +93,7 @@
           <p>Gallary</p>
         </a>
         <a
-          href="/guide.html"
+          href="https://forms.hackclub.com/toolsmith-submit"
           class="bg-gradient-to-r from-emerald-100 to-teal-100 hover:from-emerald-200 hover:to-teal-200 text-emerald-700 flex items-center mx-2 rounded-lg px-4 py-3 space-x-3 my-1 cursor-pointer transform hover:scale-105 transition-all duration-200 shadow-sm hover:shadow-md border border-emerald-200"
         >
           <svg
@@ -175,6 +156,19 @@
 
             <p>Guide</p>
           </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-auto p-4 border-t border-gray-300">
+          <p class="text-center text-sm text-gray-500">
+            Made with ❤️ by
+            <a
+              href="https://hackclub.com"
+              class="text-emerald-600 hover:text-emerald-700 underline"
+              target="_blank"
+              >Hack Club</a
+            >
+          </p>
         </div>
         <!-- <div class="grow"></div>
         <button
@@ -349,11 +343,12 @@
                       Share your creation with the community
                     </p>
                   </div>
-                  <button
+                  <a
+                    href="https://forms.hackclub.com/toolsmith-submit"
                     class="mt-3 bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors"
                   >
                     Submit Now
-                  </button>
+                  </a>
                 </div>
                 <div
                   class="bg-amber-100 border-amber-400 border-2 border-dashed rounded-lg flex flex-col items-center p-4 text-center h-full"
@@ -416,20 +411,21 @@
     <script>
       // Copy to clipboard function
       function copyToClipboard() {
+        const currentUrl = window.location.href;
         navigator.clipboard
-          .writeText("https://toolsmith.hackclub.com")
+          .writeText(currentUrl)
           .then(function () {
-            alert("Copied!");
+            alert("Page URL copied!");
           })
           .catch(function (err) {
             // Fallback for older browsers
             const textArea = document.createElement("textarea");
-            textArea.value = "https://toolsmith.hackclub.com";
+            textArea.value = currentUrl;
             document.body.appendChild(textArea);
             textArea.select();
             document.execCommand("copy");
             document.body.removeChild(textArea);
-            alert("Copied!");
+            alert("Page URL copied!");
           });
       }
 
@@ -457,13 +453,18 @@
       // Chat functionality
       let chatHistory = [
         {
+          role: "system",
+          content:
+            "You are a helpful assistant for Toolsmith, a program where developers build MCP (Model Context Protocol) tools and earn $10 in AI credits. The complete guide includes: 1) Hackatime setup for time tracking (hackatime.hackclub.com), 2) MCP explanation (USB ports for AI apps), 3) Project setup with Node.js and npm init, 4) 6-step tool building process (import libraries @modelcontextprotocol/sdk + zod, create McpServer, define input schema with z.string().describe(), write async function, register tool with server.registerTool(), start with StdioServerTransport), 5) Local testing with 'npx @modelcontextprotocol/inspector node index.js', 6) Claude Desktop testing with config file containing mcpServers object, 7) Publishing workflow (add bin entry to package.json, shebang #!/usr/bin/env node, npm login/publish), 8) Submission requirements (public GitHub repo, npm publish, README with config example, 2+ hours tracked). Weather tool example uses goweather.xyz API. Help users understand MCP, guide building process, troubleshoot issues.",
+        },
+        {
           role: "user",
           content: "What's this about?",
         },
         {
           role: "assistant",
           content:
-            "Welcome to Toolsmith! 🧰\n\nToolsmith is a limited You Ship, We Ship program where you build an awesome MCP tool and get $10 in AI credits for platforms like OpenAI, Anthropic, and more!",
+            "Welcome to Toolsmith! 🧰\n\nToolsmith is a limited You Ship, We Ship program where you build an awesome MCP tool and get $10 in AI credits for platforms like OpenAI, Anthropic, and more!\n\nYou'll learn to build tools that give AI superpowers - like checking weather, managing files, or integrating with services!",
         },
         {
           role: "user",
@@ -472,7 +473,7 @@
         {
           role: "assistant",
           content:
-            "Great question! It's actually really simple:\n\n🚀 You Ship:\n- MCP server with at least one tool\n- Spend at least 2 hrs\n- Publish it to the gallery\n\n🎁 We Ship:\n- $10 of AI Credits for OpenAI, Anthropic, Gemini, etc.",
+            "Great question! It's actually really simple:\n\n🚀 You Ship:\n- MCP server with at least one tool\n- Spend at least 2 hrs (tracked with Hackatime)\n- Publish it to npm and GitHub\n- Submit to the gallery\n\n🎁 We Ship:\n- $10 of AI Credits for OpenAI, Anthropic, Gemini, etc.\n\nThe guide walks through building a weather tool step-by-step!",
         },
         {
           role: "user",
@@ -481,7 +482,7 @@
         {
           role: "assistant",
           content:
-            "MCP (Model Context Protocol) tools are like superpowers for AI assistants! 🦸‍♂️\n\nThink of them as plugins that give AI new abilities. Instead of just chatting, AI can now:\n- Check the weather anywhere (Weather tool)\n- Organize & search files on your computer (File manager)\n- Send messages as you (Slack integration)\n\nAnd much more!",
+            "MCP (Model Context Protocol) tools are like superpowers for AI assistants! 🦸‍♂️\n\nThink of them as plugins that give AI new abilities. Instead of just chatting, AI can now:\n- Check the weather anywhere (Weather tool)\n- Organize & search files on your computer (File manager)\n- Send messages as you (Slack integration)\n- Pull data from APIs (Wikipedia, crypto prices, NASA)\n- Automate local tasks (screenshots, smart lights)\n\nMCP is like USB ports for AI apps!",
         },
         {
           role: "user",
@@ -490,7 +491,25 @@
         {
           role: "assistant",
           content:
-            "Perfect! Here's the simple 3-step process:\n\n1. 🛠️ Build: Create your MCP tool. Need help? Check out the guide.\n2. 📤 Submit: Share your creation with the community\n3. 💰 Earn: Get $10 in AI credits for your hard work!",
+            "Perfect! Here's the simple 3-step process:\n\n1. 🛠️ Build: Create your MCP tool following our guide\n   - Set up Hackatime for time tracking\n   - Install Node.js and MCP SDK\n   - Build in 6 steps: imports → server → schema → function → register → start\n   - Test locally with MCP inspector\n   - Test with Claude Desktop\n\n2. 📤 Submit: Publish to npm + GitHub, then submit\n\n3. 💰 Earn: Get $10 in AI credits!\n\nThe guide has everything you need with code examples!",
+        },
+        {
+          role: "user",
+          content: "What exactly will I build in the guide?",
+        },
+        {
+          role: "assistant",
+          content:
+            "The guide teaches you to build a weather tool that AI can use! 🌤️\n\nYou'll learn:\n- How to set up an MCP server with the SDK\n- Define input schemas (city names) with Zod validation\n- Write functions that call real APIs (goweather.xyz)\n- Register tools so AI can discover and use them\n- Test locally with the MCP inspector\n- Configure Claude Desktop to use your tool\n- Package and publish to npm for others to use\n\nBy the end, you can ask any MCP-compatible AI 'What's the weather in Berlin?' and it'll use YOUR tool to answer!",
+        },
+        {
+          role: "user",
+          content: "How do I test my tool?",
+        },
+        {
+          role: "assistant",
+          content:
+            "There are two great ways to test your MCP tool:\n\n1. **Local testing** with MCP inspector:\n   `npx @modelcontextprotocol/inspector node index.js`\n   This opens a web interface where you can test your tool directly!\n\n2. **Claude Desktop testing**:\n   - Open Claude settings → Developer → Edit Config\n   - Add your tool to the config JSON file\n   - Restart Claude and ask it to use your tool\n\nThe guide shows exact config examples for both development and published tools. You'll see your tool working with real AI!",
         },
       ];
 
