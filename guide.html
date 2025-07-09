@@ -72,8 +72,26 @@
           </div>
           <p>Toolsmith</p>
         </div>
+        <!-- Deadline Countdown -->
+        <div class="flex items-center mx-2 rounded-lg px-4 py-3 space-x-3 my-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+          <p id="countdown" class="font-mono text-sm"></p>
+        </div>
         <a
-          href="/gallary.html"
+          href="/gallery.html"
           class="hover:bg-gray-200 flex items-center mx-2 rounded-lg px-4 py-3 space-x-3 my-1"
         >
           <svg
@@ -90,7 +108,7 @@
               d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 0 1-1.125-1.125v-3.75ZM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-8.25ZM3.75 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-2.25Z"
             />
           </svg>
-          <p>Gallary</p>
+          <p>Gallery</p>
         </a>
         <a
           href="https://forms.hackclub.com/toolsmith-submit"
@@ -112,6 +130,7 @@
           </svg>
           <p class="font-bold">Submit!! 🚀</p>
         </a>
+        
         <p class="mx-6 text-gray-600 mt-4 mb-1">Chats</p>
         <div>
           <a
@@ -730,6 +749,30 @@ npm publish
             sendMessage();
           }
         });
+
+      // Countdown timer
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const deadline = new Date("July 11, 2025 23:59:59 EDT").getTime();
+        const timeLeft = deadline - now;
+
+        if (timeLeft > 0) {
+          const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+          document.getElementById("countdown").innerHTML = 
+            `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        } else {
+          document.getElementById("countdown").innerHTML = "Deadline passed";
+          document.getElementById("countdown").className += " text-red-500";
+        }
+      }
+
+      // Update countdown every second
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
     </script>
   </body>
 </html>

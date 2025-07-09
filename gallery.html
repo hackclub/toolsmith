@@ -72,8 +72,26 @@
           </div>
           <p>Toolsmith</p>
         </div>
+        <!-- Deadline Countdown -->
+        <div class="flex items-center mx-2 rounded-lg px-4 py-3 space-x-3 my-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+          <p id="countdown" class="font-mono text-sm"></p>
+        </div>
         <a
-          href="/gallary.html"
+          href="/gallery.html"
           class="bg-gray-200 flex items-center mx-2 rounded-lg px-4 py-3 space-x-3 my-1"
         >
           <svg
@@ -112,6 +130,7 @@
           </svg>
           <p class="font-bold">Submit!! 🚀</p>
         </a>
+
         <p class="mx-6 text-gray-600 mt-4 mb-1">Chats</p>
         <div>
           <a
@@ -194,7 +213,7 @@
             </svg>
           </button>
         </div>
-        <div class="flex-1 flex items-center justify-center px-6">
+        <div class="flex-1 px-6 flex items-center justify-center">
           <div class="text-center max-w-lg">
             <div class="mb-8">
               <svg
@@ -292,6 +311,36 @@
           sidebar.classList.add("-translate-x-full");
         }
       });
+
+      // Countdown timer
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const deadline = new Date("July 11, 2025 23:59:59 EDT").getTime();
+        const timeLeft = deadline - now;
+
+        if (timeLeft > 0) {
+          const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (timeLeft % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+          document.getElementById(
+            "countdown"
+          ).innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        } else {
+          document.getElementById("countdown").innerHTML =
+            "Deadline has passed";
+          document.getElementById("countdown").className += " text-red-500";
+        }
+      }
+
+      // Update countdown every second
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
     </script>
   </body>
 </html>
