@@ -254,20 +254,21 @@
     <script>
       // Copy to clipboard function
       function copyToClipboard() {
+        const currentUrl = window.location.href;
         navigator.clipboard
-          .writeText("https://toolsmith.hackclub.com")
+          .writeText(currentUrl)
           .then(function () {
-            alert("Copied!");
+            alert("Page URL copied!");
           })
           .catch(function (err) {
             // Fallback for older browsers
             const textArea = document.createElement("textarea");
-            textArea.value = "https://toolsmith.hackclub.com";
+            textArea.value = currentUrl;
             document.body.appendChild(textArea);
             textArea.select();
             document.execCommand("copy");
             document.body.removeChild(textArea);
-            alert("Copied!");
+            alert("Page URL copied!");
           });
       }
 
