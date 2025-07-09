@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toolsmith</title>
+    <meta
+      name="description"
+      content="Join Toolsmith YSWS ! Build an MCP tool and earn $10 in AI credits. Perfect for teen developers looking to learn and earn."
+    />
+    <link rel="stylesheet" href="tw.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="font-inter bg-white text-gray-800 overflow-hidden">
+    <!-- ChatGPT Layout -->
+    <div class="flex h-screen">
+      <!-- Left Sidebar -->
+      <div
+        class="flex h-full w-[260px] flex-col bg-gray-50 border-r border-gray-200"
+      >
+        <!-- Header -->
+        <div class="flex h-14 items-center justify-between px-2">
+          <div class="flex items-center gap-2">
+            <div
+              class="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-500"
+            >
+              <svg
+                class="h-4 w-4 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                ></path>
+              </svg>
+            </div>
+            <span class="text-sm font-medium text-gray-900">Toolsmith</span>
+          </div>
+          <button
+            class="flex h-8 w-8 items-center justify-center rounded-lg hover:bg-gray-200"
+          >
+            <svg
+              class="h-4 w-4 text-gray-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Navigation Items -->
+        <div class="flex flex-col gap-1 px-2">
+          <button
+            class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm hover:bg-gray-200 text-gray-700"
+          >
+            <svg
+              class="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+              ></path>
+            </svg>
+            New chat
+          </button>
+          <button
+            class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm hover:bg-gray-200 text-gray-700"
+          >
+            <svg
+              class="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              ></path>
+            </svg>
+            Search chats
+          </button>
+        </div>
+
+        <!-- Chat History -->
+        <div class="flex-1 overflow-y-auto px-2">
+          <div class="py-2">
+            <div class="text-xs font-medium text-gray-500 px-3 py-2">Chats</div>
+            <div class="space-y-1">
+              <div
+                class="flex items-center rounded-lg bg-gray-200 px-3 py-2.5 text-sm text-gray-900"
+              >
+                <span class="truncate">Toolsmith YSWS Program</span>
+              </div>
+              <div
+                class="flex items-center rounded-lg px-3 py-2.5 text-sm text-gray-600 hover:bg-gray-200"
+              >
+                <span class="truncate">MCP Tool Ideas</span>
+              </div>
+              <div
+                class="flex items-center rounded-lg px-3 py-2.5 text-sm text-gray-600 hover:bg-gray-200"
+              >
+                <span class="truncate">Getting Started Guide</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="border-t border-gray-200 p-2">
+          <button
+            class="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm hover:bg-gray-200 text-gray-700"
+          >
+            <div
+              class="h-5 w-5 rounded-full bg-blue-500 flex items-center justify-center"
+            >
+              <span class="text-xs text-white">U</span>
+            </div>
+            Upgrade plan
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="flex flex-1 flex-col">
+        <!-- Top Header -->
+        <div
+          class="flex h-14 items-center justify-between border-b border-gray-200 px-4"
+        >
+          <div class="flex items-center gap-2">
+            <span class="text-lg font-medium">Toolsmith</span>
+            <svg
+              class="h-4 w-4 text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="rounded-lg p-2 hover:bg-gray-100">
+              <svg
+                class="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"
+                ></path>
+              </svg>
+            </button>
+            <button class="rounded-lg p-2 hover:bg-gray-100">
+              <svg
+                class="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Conversation Area -->
+        <div class="flex-1 overflow-y-auto">
+          <div class="mx-auto max-w-3xl">
+            <!-- Welcome Message from Assistant -->
+            <div
+              class="group w-full text-gray-800 border-b border-gray-200 bg-gray-50"
+              data-testid="conversation-turn-3"
+            >
+              <div
+                class="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0 m-auto"
+              >
+                <div class="flex-shrink-0 flex flex-col relative items-end">
+                  <div
+                    class="relative h-[30px] w-[30px] p-1 rounded-sm text-white flex items-center justify-center bg-emerald-500"
+                  >
+                    <span class="text-sm font-bold">T</span>
+                  </div>
+                </div>
+                <div
+                  class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]"
+                >
+                  <div class="flex flex-grow flex-col gap-3">
+                    <div
+                      class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words"
+                    >
+                      <div class="markdown prose w-full break-words">
+                        <p><strong>Welcome to Toolsmith!</strong> 🚀</p>
+
+                        <p>
+                          Hey there! I'm excited to tell you about an awesome
+                          opportunity for teen developers. Have you heard about
+                          <strong>YSWS</strong> (You Ship, We Ship) programs?
+                        </p>
+                        <p>
+                          Build an amazing
+                          <span
+                            class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded"
+                            >MCP tool</span
+                          >
+                          and earn
+                          <span
+                            class="bg-green-100 text-green-700 px-2 py-1 rounded font-semibold"
+                            >$10 in AI credits</span
+                          >
+                          for platforms like OpenAI, Anthropic, and more!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- User Question -->
+            <div
+              class="group w-full text-gray-800 border-b border-gray-200 bg-white"
+              data-testid="conversation-turn-4"
+            >
+              <div
+                class="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0 m-auto"
+              >
+                <div class="flex-shrink-0 flex flex-col relative items-end">
+                  <div
+                    class="relative h-[30px] w-[30px] p-1 rounded-sm text-white flex items-center justify-center bg-gray-500"
+                  >
+                    <span class="text-sm">👤</span>
+                  </div>
+                </div>
+                <div
+                  class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]"
+                >
+                  <div class="flex flex-grow flex-col gap-3">
+                    <div
+                      class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words"
+                    >
+                      <div class="markdown prose w-full break-words">
+                        <p>What exactly is YSWS? How does it work?</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- YSWS Explanation -->
+            <div
+              class="group w-full text-gray-800 border-b border-gray-200 bg-gray-50"
+              data-testid="conversation-turn-5"
+            >
+              <div
+                class="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0 m-auto"
+              >
+                <div class="flex-shrink-0 flex flex-col relative items-end">
+                  <div
+                    class="relative h-[30px] w-[30px] p-1 rounded-sm text-white flex items-center justify-center bg-emerald-500"
+                  >
+                    <span class="text-sm font-bold">T</span>
+                  </div>
+                </div>
+                <div
+                  class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]"
+                >
+                  <div class="flex flex-grow flex-col gap-3">
+                    <div
+                      class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words"
+                    >
+                      <div class="markdown prose w-full break-words">
+                        <p>
+                          Great question! <strong>YSWS</strong> stands for "You
+                          Ship, We Ship" - it's beautifully simple:
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+                          <div
+                            class="bg-blue-50 border border-blue-200 rounded-lg p-4"
+                          >
+                            <h3
+                              class="font-semibold text-blue-700 mb-3 flex items-center"
+                            >
+                              📦 You Ship
+                            </h3>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                              <li>• Build an MCP tool</li>
+                              <li>• Make it creative & useful</li>
+                              <li>• Submit your creation</li>
+                            </ul>
+                          </div>
+                          <div
+                            class="bg-purple-50 border border-purple-200 rounded-lg p-4"
+                          >
+                            <h3
+                              class="font-semibold text-purple-700 mb-3 flex items-center"
+                            >
+                              🎁 We Ship
+                            </h3>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                              <li>• $10 in AI credits</li>
+                              <li>• OpenAI, Anthropic, etc.</li>
+                              <li>• Recognition & feedback</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- User Question about MCP -->
+            <div
+              class="group w-full text-gray-800 border-b border-gray-200 bg-white"
+              data-testid="conversation-turn-6"
+            >
+              <div
+                class="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0 m-auto"
+              >
+                <div class="flex-shrink-0 flex flex-col relative items-end">
+                  <div
+                    class="relative h-[30px] w-[30px] p-1 rounded-sm text-white flex items-center justify-center bg-gray-500"
+                  >
+                    <span class="text-sm">👤</span>
+                  </div>
+                </div>
+                <div
+                  class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]"
+                >
+                  <div class="flex flex-grow flex-col gap-3">
+                    <div
+                      class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words"
+                    >
+                      <div class="markdown prose w-full break-words">
+                        <p>
+                          Sounds interesting! But what are MCP tools exactly?
+                          I'm not familiar with them.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- MCP Explanation -->
+            <div
+              class="group w-full text-gray-800 border-b border-gray-200 bg-gray-50"
+              data-testid="conversation-turn-7"
+            >
+              <div
+                class="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0 m-auto"
+              >
+                <div class="flex-shrink-0 flex flex-col relative items-end">
+                  <div
+                    class="relative h-[30px] w-[30px] p-1 rounded-sm text-white flex items-center justify-center bg-emerald-500"
+                  >
+                    <span class="text-sm font-bold">T</span>
+                  </div>
+                </div>
+                <div
+                  class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]"
+                >
+                  <div class="flex flex-grow flex-col gap-3">
+                    <div
+                      class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words"
+                    >
+                      <div class="markdown prose w-full break-words">
+                        <p>
+                          <strong>MCP (Model Context Protocol) tools</strong>
+                          are like superpowers for AI assistants! 🦸‍♂️
+                        </p>
+                        <p>
+                          Think of them as plugins that give AI new abilities.
+                          Instead of just chatting, AI can now:
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+                          <div
+                            class="bg-gray-50 border border-gray-300 rounded-lg p-4 text-center"
+                          >
+                            <div class="text-2xl mb-2">🌤️</div>
+                            <h4 class="font-semibold text-amber-700 mb-2">
+                              Weather Tool
+                            </h4>
+                            <p class="text-xs text-gray-600 mb-3">
+                              Check weather anywhere
+                            </p>
+                            <div class="bg-gray-100 rounded p-2">
+                              <code class="text-xs text-gray-700"
+                                >"What's the weather in Tokyo?"</code
+                              >
+                            </div>
+                          </div>
+                          <div
+                            class="bg-gray-50 border border-gray-300 rounded-lg p-4 text-center"
+                          >
+                            <div class="text-2xl mb-2">📁</div>
+                            <h4 class="font-semibold text-green-700 mb-2">
+                              File Manager
+                            </h4>
+                            <p class="text-xs text-gray-600 mb-3">
+                              Organize & search files
+                            </p>
+                            <div class="bg-gray-100 rounded p-2">
+                              <code class="text-xs text-gray-700"
+                                >"Find all my Python files"</code
+                              >
+                            </div>
+                          </div>
+                          <div
+                            class="bg-gray-50 border border-gray-300 rounded-lg p-4 text-center"
+                          >
+                            <div class="text-2xl mb-2">🔗</div>
+                            <h4 class="font-semibold text-purple-700 mb-2">
+                              API Connector
+                            </h4>
+                            <p class="text-xs text-gray-600 mb-3">
+                              Connect to services
+                            </p>
+                            <div class="bg-gray-100 rounded p-2">
+                              <code class="text-xs text-gray-700"
+                                >"Post this to Twitter"</code
+                              >
+                            </div>
+                          </div>
+                        </div>
+
+                        <p>
+                          You can build tools in any programming language. The
+                          possibilities are endless!
+                          <a
+                            href="https://github.com/modelcontextprotocol"
+                            target="_blank"
+                            class="text-blue-400 hover:text-blue-700 underline"
+                            >Check out the MCP docs →</a
+                          >
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- User Question about Process -->
+            <div
+              class="group w-full text-gray-800 border-b border-gray-200 bg-white"
+              data-testid="conversation-turn-8"
+            >
+              <div
+                class="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0 m-auto"
+              >
+                <div class="flex-shrink-0 flex flex-col relative items-end">
+                  <div
+                    class="relative h-[30px] w-[30px] p-1 rounded-sm text-white flex items-center justify-center bg-gray-500"
+                  >
+                    <span class="text-sm">👤</span>
+                  </div>
+                </div>
+                <div
+                  class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]"
+                >
+                  <div class="flex flex-grow flex-col gap-3">
+                    <div
+                      class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words"
+                    >
+                      <div class="markdown prose w-full break-words">
+                        <p>
+                          This is cool! How do I get started? What's the
+                          process?
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Process Explanation -->
+            <div
+              class="group w-full text-gray-800 border-b border-gray-200 bg-gray-50"
+              data-testid="conversation-turn-9"
+            >
+              <div
+                class="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0 m-auto"
+              >
+                <div class="flex-shrink-0 flex flex-col relative items-end">
+                  <div
+                    class="relative h-[30px] w-[30px] p-1 rounded-sm text-white flex items-center justify-center bg-emerald-500"
+                  >
+                    <span class="text-sm font-bold">T</span>
+                  </div>
+                </div>
+                <div
+                  class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]"
+                >
+                  <div class="flex flex-grow flex-col gap-3">
+                    <div
+                      class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words"
+                    >
+                      <div class="markdown prose w-full break-words">
+                        <p>Perfect! Here's the simple 3-step process:</p>
+
+                        <div class="space-y-4 my-6">
+                          <div class="flex items-start gap-4">
+                            <div
+                              class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0"
+                            >
+                              <span class="text-white text-sm font-bold"
+                                >1</span
+                              >
+                            </div>
+                            <div>
+                              <h4 class="font-semibold text-blue-700">Build</h4>
+                              <p class="text-gray-700 text-sm">
+                                Create your MCP tool using any language. Solve a
+                                real problem or build something fun!
+                              </p>
+                            </div>
+                          </div>
+                          <div class="flex items-start gap-4">
+                            <div
+                              class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0"
+                            >
+                              <span class="text-white text-sm font-bold"
+                                >2</span
+                              >
+                            </div>
+                            <div>
+                              <h4 class="font-semibold text-green-700">
+                                Submit
+                              </h4>
+                              <p class="text-gray-700 text-sm">
+                                Share via GitHub, email, or our form. Include
+                                docs and a demo!
+                              </p>
+                            </div>
+                          </div>
+                          <div class="flex items-start gap-4">
+                            <div
+                              class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0"
+                            >
+                              <span class="text-white text-sm font-bold"
+                                >3</span
+                              >
+                            </div>
+                            <div>
+                              <h4 class="font-semibold text-purple-700">
+                                Earn
+                              </h4>
+                              <p class="text-gray-700 text-sm">
+                                Get your $10 AI credits within 48 hours!
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- User Question about Requirements -->
+            <div
+              class="group w-full text-gray-800 border-b border-gray-200 bg-white"
+              data-testid="conversation-turn-10"
+            >
+              <div
+                class="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0 m-auto"
+              >
+                <div class="flex-shrink-0 flex flex-col relative items-end">
+                  <div
+                    class="relative h-[30px] w-[30px] p-1 rounded-sm text-white flex items-center justify-center bg-gray-500"
+                  >
+                    <span class="text-sm">👤</span>
+                  </div>
+                </div>
+                <div
+                  class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]"
+                >
+                  <div class="flex flex-grow flex-col gap-3">
+                    <div
+                      class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words"
+                    >
+                      <div class="markdown prose w-full break-words">
+                        <p>What are the requirements? Do I qualify?</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Requirements -->
+            <div
+              class="group w-full text-gray-800 border-b border-gray-200 bg-gray-50"
+              data-testid="conversation-turn-11"
+            >
+              <div
+                class="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0 m-auto"
+              >
+                <div class="flex-shrink-0 flex flex-col relative items-end">
+                  <div
+                    class="relative h-[30px] w-[30px] p-1 rounded-sm text-white flex items-center justify-center bg-emerald-500"
+                  >
+                    <span class="text-sm font-bold">T</span>
+                  </div>
+                </div>
+                <div
+                  class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]"
+                >
+                  <div class="flex flex-grow flex-col gap-3">
+                    <div
+                      class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words"
+                    >
+                      <div class="markdown prose w-full break-words">
+                        <p>
+                          The requirements are pretty straightforward! Here's
+                          what you need:
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+                          <div
+                            class="bg-green-50 border border-green-200 rounded-lg p-4"
+                          >
+                            <h4 class="font-semibold text-green-700 mb-3">
+                              ✅ Must Have
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                              <li>• Be 13-19 years old</li>
+                              <li>• Build a working MCP tool</li>
+                              <li>• Include clear documentation</li>
+                              <li>• Provide a demo/example</li>
+                              <li>• Submit original work</li>
+                            </ul>
+                          </div>
+                          <div
+                            class="bg-blue-50 border border-blue-200 rounded-lg p-4"
+                          >
+                            <h4 class="font-semibold text-blue-700 mb-3">
+                              🌟 Bonus Points
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                              <li>• Creative & unique ideas</li>
+                              <li>• Clean, readable code</li>
+                              <li>• Solves real problems</li>
+                              <li>• Open source on GitHub</li>
+                              <li>• Good UI/UX design</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- User Ready to Start -->
+            <div
+              class="group w-full text-gray-800 border-b border-gray-200 bg-white"
+              data-testid="conversation-turn-12"
+            >
+              <div
+                class="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0 m-auto"
+              >
+                <div class="flex-shrink-0 flex flex-col relative items-end">
+                  <div
+                    class="relative h-[30px] w-[30px] p-1 rounded-sm text-white flex items-center justify-center bg-gray-500"
+                  >
+                    <span class="text-sm">👤</span>
+                  </div>
+                </div>
+                <div
+                  class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]"
+                >
+                  <div class="flex flex-grow flex-col gap-3">
+                    <div
+                      class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words"
+                    >
+                      <div class="markdown prose w-full break-words">
+                        <p>I'm sold! How do I submit my tool when I'm ready?</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CTA Response -->
+            <div
+              class="group w-full text-gray-800 border-b border-gray-200 bg-gray-50"
+              data-testid="conversation-turn-13"
+            >
+              <div
+                class="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0 m-auto"
+              >
+                <div class="flex-shrink-0 flex flex-col relative items-end">
+                  <div
+                    class="relative h-[30px] w-[30px] p-1 rounded-sm text-white flex items-center justify-center bg-emerald-500"
+                  >
+                    <span class="text-sm font-bold">T</span>
+                  </div>
+                </div>
+                <div
+                  class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]"
+                >
+                  <div class="flex flex-grow flex-col gap-3">
+                    <div
+                      class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words"
+                    >
+                      <div class="markdown prose w-full break-words">
+                        <p>Awesome! I'm excited to see what you'll build! 🎉</p>
+
+                        <div class="flex flex-col sm:flex-row gap-3 my-6">
+                          <button
+                            class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2"
+                          >
+                            <span>Submit Your Tool</span>
+                            <svg
+                              class="w-4 h-4"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6"
+                              ></path>
+                            </svg>
+                          </button>
+                          <button
+                            class="bg-gray-500 hover:bg-gray-400 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2"
+                          >
+                            <span>Get Help Building</span>
+                            <span>💡</span>
+                          </button>
+                        </div>
+
+                        <div
+                          class="bg-gray-50 border border-gray-300 rounded-lg p-4"
+                        >
+                          <p class="text-sm text-gray-700">
+                            <strong>Questions?</strong> Email us at
+                            <a
+                              href="mailto:hello@toolsmith.ysws"
+                              class="text-emerald-600 hover:text-emerald-700"
+                              >hello@toolsmith.ysws</a
+                            >
+                          </p>
+                        </div>
+
+                        <p class="text-xs text-gray-500">
+                          Join hundreds of teen developers already earning AI
+                          credits for their creativity!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Input (Like ChatGPT) -->
+        <div class="border-t border-gray-200 pt-2 pb-3 bg-white">
+          <div
+            class="stretch mx-2 flex flex-row gap-3 last:mb-2 md:mx-4 md:last:mb-6 lg:mx-auto lg:max-w-2xl xl:max-w-3xl"
+          >
+            <div class="relative flex h-full flex-1 items-stretch md:flex-col">
+              <div
+                class="flex flex-col w-full py-[10px] flex-grow md:py-4 md:pl-4 relative border border-gray-300 bg-white rounded-xl shadow-sm"
+              >
+                <textarea
+                  rows="1"
+                  placeholder="Ask me anything about Toolsmith..."
+                  class="m-0 w-full resize-none border-0 bg-transparent p-0 pr-10 focus:ring-0 focus-visible:ring-0 md:pr-12 pl-3 md:pl-0 text-gray-800"
+                  style="max-height: 200px; height: 24px; overflow-y: hidden"
+                  disabled
+                ></textarea>
+                <button
+                  class="absolute p-1 rounded-md md:bottom-3 md:p-2 md:right-3 hover:bg-gray-100 disabled:hover:bg-transparent right-2 disabled:text-gray-400 enabled:bg-emerald-500 text-white bottom-1.5 transition-colors disabled:opacity-40"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="text-white"
+                  >
+                    <path
+                      d="M7 11L12 6L17 11M12 18V7"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="px-3 pb-3 pt-2 text-center text-xs text-gray-600 md:px-4 md:pb-6 md:pt-3"
+          >
+            <span>Toolsmith YSWS • Made with ❤️ for teen developers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // ChatGPT-style interactions
+
+        // Button interactions
+        document.querySelectorAll("button").forEach((button) => {
+          button.addEventListener("click", function () {
+            if (this.textContent.includes("Submit Your Tool")) {
+              alert(
+                "🚀 Awesome! Ready to submit? Email us your MCP tool at hello@toolsmith.ysws with:\n\n• GitHub repo link\n• Demo video/screenshots\n• Brief description\n\nWe'll review it within 48 hours!"
+              );
+            } else if (this.textContent.includes("Get Help Building")) {
+              alert(
+                "💡 Need help getting started?\n\nCheck out:\n• MCP docs: github.com/modelcontextprotocol\n• Example tools: github.com/modelcontextprotocol/servers\n• Email us: hello@toolsmith.ysws\n\nWe're here to help!"
+              );
+            }
+          });
+        });
+
+        // ChatGPT-style hover effects for message groups
+        document.querySelectorAll(".group").forEach((group) => {
+          group.addEventListener("mouseenter", function () {
+            if (this.classList.contains("bg-gray-50")) {
+              this.style.backgroundColor = "rgb(249 250 251)"; // Slightly darker gray-50
+            } else {
+              this.style.backgroundColor = "rgb(249 250 251)"; // Light gray hover
+            }
+          });
+          group.addEventListener("mouseleave", function () {
+            this.style.backgroundColor = "";
+          });
+        });
+
+        // Simulate typing in textarea
+        const textarea = document.querySelector("textarea");
+        if (textarea) {
+          textarea.addEventListener("focus", function () {
+            this.placeholder = "Type your message...";
+          });
+          textarea.addEventListener("blur", function () {
+            this.placeholder = "Ask me anything about Toolsmith...";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
