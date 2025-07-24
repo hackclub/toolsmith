@@ -70,7 +70,14 @@
               />
             </svg>
           </div>
-          <p>Toolsmith</p>
+          <div class="flex space-x-2">
+            <p>Toolsmith</p>
+            <p
+              class="bg-yellow-300 flex items-center px-4 h-6 text-xs font-bold"
+            >
+              V2!
+            </p>
+          </div>
         </div>
         <!-- Deadline Countdown -->
         <div class="flex items-center mx-2 rounded-lg px-4 py-3 space-x-3 my-1">
@@ -155,7 +162,7 @@
             <p>What is this?</p>
           </a>
           <a
-            href="/guide.html"
+            href="/guide-js.html"
             class="hover:bg-gray-200 flex items-center mx-2 rounded-lg px-4 py-3 space-x-3"
           >
             <svg
@@ -173,7 +180,28 @@
               />
             </svg>
 
-            <p>Guide</p>
+            <p>Guide (JavaScript)</p>
+          </a>
+          <a
+            href="/guide-python.html"
+            class="hover:bg-gray-200 flex items-center mx-2 rounded-lg px-4 py-3 space-x-3"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
+              />
+            </svg>
+
+            <p>Guide (Python)</p>
           </a>
         </div>
 
@@ -213,58 +241,689 @@
             </svg>
           </button>
         </div>
-        <div class="flex-1 px-6 flex items-center justify-center">
-          <div class="text-center max-w-lg">
+        <div class="flex-1 overflow-y-auto">
+          <div class="p-6">
             <div class="mb-8">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1"
-                stroke="currentColor"
-                class="size-20 mx-auto text-gray-300 mb-4"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 0 1-1.125-1.125v-3.75ZM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-8.25ZM3.75 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-2.25Z"
-                />
-              </svg>
+              <h1 class="text-3xl font-bold text-gray-900 mb-2">
+                MCP Tools Gallery
+              </h1>
+              <p class="text-gray-600">
+                Amazing tools built by teens like you 🫵
+              </p>
             </div>
-            <h1 class="text-3xl font-bold text-gray-800 mb-4">
-              No Projects Yet
-            </h1>
-            <p class="text-xl text-gray-600 mb-8">
-              There are no projects yet, but you could change that!
-            </p>
-            <a
-              href="/guide.html"
-              class="inline-flex items-center space-x-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
-                />
-              </svg>
-              <span>Get Started with the Guide</span>
-            </a>
-            <p class="mt-4">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- Project Planner -->
               <a
-                href="https://forms.hackclub.com/toolsmith-submit"
-                class="text-emerald-600 underline font-medium"
+                href="https://www.npmjs.com/package/project-planner"
+                target="_blank"
+                class="block h-full"
               >
-                Already built something? Submit here →
+                <div
+                  class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col cursor-pointer h-full"
+                >
+                  <div
+                    class="h-40 bg-gradient-to-br from-blue-100 to-blue-200 rounded-t-lg flex items-center justify-center"
+                  >
+                    <div class="text-4xl">🛠️</div>
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">
+                      Project Planner
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 flex-1">
+                      An MCP tool that suggests GitHub starter templates based
+                      on your project ideas.
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-blue-600 text-sm font-medium"
+                        >📦 npm</span
+                      >
+                      <span class="text-gray-600 text-sm">@aryan9190</span>
+                    </div>
+                  </div>
+                </div>
               </a>
-            </p>
+
+              <!-- SOM MCP -->
+              <a
+                href="https://www.npmjs.com/package/som-mcp"
+                target="_blank"
+                class="block h-full"
+              >
+                <div
+                  class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col cursor-pointer h-full"
+                >
+                  <div
+                    class="h-40 bg-gradient-to-br from-green-100 to-green-200 rounded-t-lg flex items-center justify-center"
+                  >
+                    <div class="text-4xl">🔍</div>
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">
+                      SOM MCP
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 flex-1">
+                      Give Claude the ability to search through Summer of Making
+                      users and projects. Can also clone repositories and read
+                      project details.
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-blue-600 text-sm font-medium"
+                        >📦 npm</span
+                      >
+                      <span class="text-gray-600 text-sm">@BirdRoad1</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- MCP Migadu -->
+              <a
+                href="https://www.npmjs.com/package/mcp-migadu"
+                target="_blank"
+                class="block h-full"
+              >
+                <div
+                  class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col cursor-pointer h-full"
+                >
+                  <div
+                    class="h-40 bg-gradient-to-br from-purple-100 to-purple-200 rounded-t-lg flex items-center justify-center"
+                  >
+                    <div class="text-4xl">📧</div>
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">
+                      MCP Migadu
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 flex-1">
+                      Enables users to administer their Migadu email inboxes
+                      with several functions including forwarding, redirects,
+                      and making new inboxes!
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-blue-600 text-sm font-medium"
+                        >📦 npm</span
+                      >
+                      <span class="text-gray-600 text-sm">@leowilkin</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Parcel MCP -->
+              <a
+                href="https://www.npmjs.com/package/parcel-mcp"
+                target="_blank"
+                class="block h-full"
+              >
+                <div
+                  class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col cursor-pointer h-full"
+                >
+                  <div
+                    class="h-40 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-t-lg flex items-center justify-center"
+                  >
+                    <div class="text-4xl">📦</div>
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">
+                      Parcel MCP
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 flex-1">
+                      Register tracking numbers and retrieve real-time shipment
+                      status. Connect via MCP for structured delivery updates in
+                      an easy-to-read format.
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-blue-600 text-sm font-medium"
+                        >📦 npm</span
+                      >
+                      <span class="text-gray-600 text-sm">@iamfiro</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- OTOCP -->
+              <a
+                href="https://pypi.org/project/otocp/"
+                target="_blank"
+                class="block h-full"
+              >
+                <div
+                  class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col cursor-pointer h-full"
+                >
+                  <div
+                    class="h-40 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-t-lg flex items-center justify-center"
+                  >
+                    <div class="text-4xl">📝</div>
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">
+                      OTOCP
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 flex-1">
+                      Write tasks, read tasks, complete tasks and delete tasks
+                      in Obsidian or any .md file.
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-orange-600 text-sm font-medium"
+                        >🐍 pypi</span
+                      >
+                      <span class="text-gray-600 text-sm">@lattisse</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Autorestic MCP -->
+              <a
+                href="https://www.npmjs.com/package/autorestic-mcp"
+                target="_blank"
+                class="block h-full"
+              >
+                <div
+                  class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col cursor-pointer h-full"
+                >
+                  <div
+                    class="h-40 bg-gradient-to-br from-red-100 to-red-200 rounded-t-lg flex items-center justify-center"
+                  >
+                    <div class="text-4xl">💾</div>
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">
+                      Autorestic MCP
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 flex-1">
+                      Give your AI models access to information about your
+                      backups! Check space usage, file counts, and more using
+                      restic backup orchestration.
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-blue-600 text-sm font-medium"
+                        >📦 npm</span
+                      >
+                      <span class="text-gray-600 text-sm">@not-first</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Money Swapper -->
+              <a
+                href="https://www.npmjs.com/package/kk-money-swapper"
+                target="_blank"
+                class="block h-full"
+              >
+                <div
+                  class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col cursor-pointer h-full"
+                >
+                  <div
+                    class="h-40 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-t-lg flex items-center justify-center"
+                  >
+                    <div class="text-4xl">💱</div>
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">
+                      Money Swapper
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 flex-1">
+                      Amazing tool to swap currencies across borders. Convert
+                      amounts between currencies and get current exchange rates.
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-blue-600 text-sm font-medium"
+                        >📦 npm</span
+                      >
+                      <span class="text-gray-600 text-sm">@keshkunal</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Wikipedia On This Day -->
+              <a
+                href="https://www.npmjs.com/package/mcp-wikipedia-onthisdaytoday-server"
+                target="_blank"
+                class="block h-full"
+              >
+                <div
+                  class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col cursor-pointer h-full"
+                >
+                  <div
+                    class="h-40 bg-gradient-to-br from-teal-100 to-teal-200 rounded-t-lg flex items-center justify-center"
+                  >
+                    <div class="text-4xl">📚</div>
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">
+                      Wikipedia On This Day
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 flex-1">
+                      Get historical events that happened on the current day
+                      from Wikipedia's "On This Day" feed. Supports different
+                      languages and random selection.
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-blue-600 text-sm font-medium"
+                        >📦 npm</span
+                      >
+                      <span class="text-gray-600 text-sm">@crasyK</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Web Browsing MCP -->
+              <a
+                href="https://www.npmjs.com/package/@leonardocerv/web-browsing-mcp"
+                target="_blank"
+                class="block h-full"
+              >
+                <div
+                  class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col cursor-pointer h-full"
+                >
+                  <div
+                    class="h-40 bg-gradient-to-br from-cyan-100 to-cyan-200 rounded-t-lg flex items-center justify-center"
+                  >
+                    <div class="text-4xl">🌐</div>
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">
+                      Web Browsing MCP
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 flex-1">
+                      Give AI assistants web browsing ability. Fetch and clean
+                      webpage content, extract elements using CSS selectors, and
+                      retrieve metadata.
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-blue-600 text-sm font-medium"
+                        >📦 npm</span
+                      >
+                      <span class="text-gray-600 text-sm">@LeonardoCerv</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- QRMax -->
+              <a
+                href="https://crates.io/crates/qrmax"
+                target="_blank"
+                class="block h-full"
+              >
+                <div
+                  class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col cursor-pointer h-full"
+                >
+                  <div
+                    class="h-40 bg-gradient-to-br from-orange-100 to-orange-200 rounded-t-lg flex items-center justify-center"
+                  >
+                    <div class="text-4xl">📱</div>
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">
+                      QRMax
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 flex-1">
+                      Encode to QR codes (uploads to catbox.moe) and decode QR
+                      codes (only allows catbox.moe downloads for security).
+                      Built with Rust!
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-red-600 text-sm font-medium"
+                        >🦀 crates.io</span
+                      >
+                      <span class="text-gray-600 text-sm">@nystar1</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Fun MCP Server -->
+              <a
+                href="https://www.npmjs.com/package/fun-mcp-server"
+                target="_blank"
+                class="block h-full"
+              >
+                <div
+                  class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col cursor-pointer h-full"
+                >
+                  <div
+                    class="h-40 bg-gradient-to-br from-pink-100 to-pink-200 rounded-t-lg flex items-center justify-center"
+                  >
+                    <div class="text-4xl">😄</div>
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">
+                      Fun MCP Server
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 flex-1">
+                      Tells jokes, fun facts, inspirational quotes, and gives
+                      advice to brighten your day!
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-blue-600 text-sm font-medium"
+                        >📦 npm</span
+                      >
+                      <span class="text-gray-600 text-sm">@TheJeetSingh</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Roblox MCP Server -->
+              <a
+                href="https://pypi.org/project/roblox-mcp-server"
+                target="_blank"
+                class="block h-full"
+              >
+                <div
+                  class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col cursor-pointer h-full"
+                >
+                  <div
+                    class="h-40 bg-gradient-to-br from-blue-100 to-blue-200 rounded-t-lg flex items-center justify-center"
+                  >
+                    <div class="text-4xl">🎮</div>
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">
+                      Roblox MCP Server
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 flex-1">
+                      Search for Roblox games, check friends' statuses, launch
+                      games, check Robux balance, get game charts, and read DM
+                      messages!
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-orange-600 text-sm font-medium"
+                        >🐍 pypi</span
+                      >
+                      <span class="text-gray-600 text-sm">@h053698</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- GraphMCP -->
+              <a
+                href="https://www.npmjs.com/package/graphmcp"
+                target="_blank"
+                class="block h-full"
+              >
+                <div
+                  class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col cursor-pointer h-full"
+                >
+                  <div
+                    class="h-40 bg-gradient-to-br from-violet-100 to-violet-200 rounded-t-lg flex items-center justify-center"
+                  >
+                    <div class="text-4xl">📊</div>
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">
+                      GraphMCP
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 flex-1">
+                      Create graph images from mathematical expressions or
+                      tabular data. Perfect for data visualization!
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-blue-600 text-sm font-medium"
+                        >📦 npm</span
+                      >
+                      <span class="text-gray-600 text-sm">@Efe-Cal</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Stock Market MCP -->
+              <a
+                href="https://www.npmjs.com/package/mcp-stock-market"
+                target="_blank"
+                class="block h-full"
+              >
+                <div
+                  class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col cursor-pointer h-full"
+                >
+                  <div
+                    class="h-40 bg-gradient-to-br from-green-100 to-green-200 rounded-t-lg flex items-center justify-center"
+                  >
+                    <div class="text-4xl">📈</div>
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">
+                      Stock Market MCP
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 flex-1">
+                      Uses Alpha Vantage API to get comprehensive information
+                      about stocks and market data.
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-blue-600 text-sm font-medium"
+                        >📦 npm</span
+                      >
+                      <span class="text-gray-600 text-sm">@mattseq</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- System Info MCP -->
+              <a
+                href="https://www.npmjs.com/package/mcp-si?activeTab=readme"
+                target="_blank"
+                class="block h-full"
+              >
+                <div
+                  class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col cursor-pointer h-full"
+                >
+                  <div
+                    class="h-40 bg-gradient-to-br from-gray-100 to-gray-200 rounded-t-lg flex items-center justify-center"
+                  >
+                    <div class="text-4xl">💻</div>
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">
+                      System Info MCP
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 flex-1">
+                      Get system information of your local device. Perfect for
+                      monitoring and system diagnostics.
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-blue-600 text-sm font-medium"
+                        >📦 npm</span
+                      >
+                      <span class="text-gray-600 text-sm">@Kale-Wu</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Connected Hearts MCP -->
+              <a
+                href="https://www.npmjs.com/package/mcp-connected-hearts"
+                target="_blank"
+                class="block h-full"
+              >
+                <div
+                  class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col cursor-pointer h-full"
+                >
+                  <div
+                    class="h-40 bg-gradient-to-br from-red-100 to-red-200 rounded-t-lg flex items-center justify-center"
+                  >
+                    <div class="text-4xl">💖</div>
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">
+                      Connected Hearts MCP
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 flex-1">
+                      Works with a hardware project - control OLED displays, RGB
+                      lights, buzzers, and read button states. IoT meets AI!
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-blue-600 text-sm font-medium"
+                        >📦 npm</span
+                      >
+                      <span class="text-gray-600 text-sm"
+                        >@anirudh12032008</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Budget MCP -->
+              <a
+                href="https://www.npmjs.com/package/mcp-budget"
+                target="_blank"
+                class="block h-full"
+              >
+                <div
+                  class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col cursor-pointer h-full"
+                >
+                  <div
+                    class="h-40 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-t-lg flex items-center justify-center"
+                  >
+                    <div class="text-4xl">💰</div>
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">
+                      Budget MCP
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 flex-1">
+                      MCP Budget provides AI with personal budget management
+                      capabilities. Track expenses and manage finances!
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-blue-600 text-sm font-medium"
+                        >📦 npm</span
+                      >
+                      <span class="text-gray-600 text-sm">@DominicTYLau</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- News MCP -->
+              <a
+                href="https://www.npmjs.com/package/mcp-news"
+                target="_blank"
+                class="block h-full"
+              >
+                <div
+                  class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col cursor-pointer h-full"
+                >
+                  <div
+                    class="h-40 bg-gradient-to-br from-blue-100 to-blue-200 rounded-t-lg flex items-center justify-center"
+                  >
+                    <div class="text-4xl">📰</div>
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">
+                      News MCP
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 flex-1">
+                      A tool that allows AI systems to access the latest news
+                      using an API. Stay updated with current events!
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-blue-600 text-sm font-medium"
+                        >📦 npm</span
+                      >
+                      <span class="text-gray-600 text-sm">@DominicTYLau</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- News Weather MCP -->
+              <a
+                href="https://www.npmjs.com/package/news-weather-mcp"
+                target="_blank"
+                class="block h-full"
+              >
+                <div
+                  class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col cursor-pointer h-full"
+                >
+                  <div
+                    class="h-40 bg-gradient-to-br from-sky-100 to-sky-200 rounded-t-lg flex items-center justify-center"
+                  >
+                    <div class="text-4xl">🌤️</div>
+                  </div>
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">
+                      News Weather MCP
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 flex-1">
+                      Fetch latest news from external API based on country and
+                      weather data based on city name. Two essential services in
+                      one!
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-blue-600 text-sm font-medium"
+                        >📦 npm</span
+                      >
+                      <span class="text-gray-600 text-sm">@x</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Call to action -->
+            <div class="mt-12 text-center bg-emerald-50 rounded-lg p-8">
+              <h2 class="text-2xl font-bold text-gray-900 mb-4">
+                Ready to Build Your Own?
+              </h2>
+              <p class="text-gray-600 mb-6">
+                Join the community and create your own MCP tool!
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/guide-js.html"
+                  class="inline-flex items-center space-x-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
+                    />
+                  </svg>
+                  <span>JavaScript Guide</span>
+                </a>
+                <a
+                  href="/guide-python.html"
+                  class="inline-flex items-center space-x-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.11 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
+                    />
+                  </svg>
+                  <span>Python Guide</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -315,7 +974,7 @@
       // Countdown timer
       function updateCountdown() {
         const now = new Date().getTime();
-        const deadline = new Date("July 13, 2025 23:59:59 EDT").getTime();
+        const deadline = new Date("July 31, 2025 23:59:59 EDT").getTime();
         const timeLeft = deadline - now;
 
         if (timeLeft > 0) {
