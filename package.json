@@ -8,9 +8,8 @@
     "build": "npx @tailwindcss/cli -i ./main.css -o ./tw.css",
     "dev": "npx @tailwindcss/cli -i ./main.css -o ./tw.css --watch"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@tailwindcss/cli": "^4.1.11",
-    "tailwindcss": "^4.1.11"
+    "@tailwindcss/cli": "^4.2.1",
+    "tailwindcss": "^4.2.1"
   }
 }
